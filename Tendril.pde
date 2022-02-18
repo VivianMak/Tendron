@@ -1,8 +1,9 @@
 class Tendril
 {
   public final static int SEG_LENGTH = 4; //length of each segment in the tendril
-  private int myNumSegments, myX, myY;
-  private double myAngle;
+  private float myNumSegments, myX, myY;
+  private float myAngle;
+  private float startX, startY, endX, endY;
   
   /**
    Class constructor
@@ -10,12 +11,26 @@ class Tendril
    theta is tendril starting angle in radians 
    x, y  is the starting (x,y) coordinate
    */
-  public Tendril(int len, double theta, int x, int y)
+  public Tendril(int len, float theta, int x, int y)
   {
-    //your code here
+    myX = x;
+    myY = y;
+    myAngle = theta;
+    myNumSegments = len;
   }
   public void show()
   {
-    //your code here
+
+    startX = myX;
+    startY = myY;
+
+    for(int i = 0; i < myNumSegments; i++){
+      myAngle += (float)(Math.random()*0.4)-0.2;//HOW TO MATH.RANDOM -0.2 to 0.2
+      endX = startX + cos(myAngle) * SEG_LENGTH;
+      endY = startY + sin(myAngle) * SEG_LENGTH;
+      line(startX, startY, endX, endY);
+      startX = endX;
+      startY = endY;
+    }
   }
 }
