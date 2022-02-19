@@ -1,15 +1,35 @@
+PImage imgDOCTOC;
+PImage imgSPMAN;
+
 public void setup()
 {
-  size(500, 500);  
-  background(255);
+  size(600, 600);  
   noLoop();
+  imgDOCTOC = loadImage("DOCTOC.png");
+  imgSPMAN = loadImage("SPMAN.png");
 }
 
 public void draw()
 {
-  background(5, 6, 40);
-  //stroke(113, 161, 111);
+  background(190,191,164);
+  background(199,215,178);
+  background(141, 173, 92);
+  stroke(255);
+  strokeWeight(15);
+  line(0,0, 600,0);
+  line(600,0, 600,600);
+  line(0,600, 600,600);
+  line(0,0, 0,600);
+  
   Cluster c = new Cluster(50, 250, 250); // initial number of segments in the tendril and starting (x,y) coordinate
+  
+  image(imgDOCTOC, 60,60);
+  stroke(255);
+  strokeWeight(15);
+  fill(54,99,132);
+  triangle(600,200, 200, 600, 600,600);
+  image(imgSPMAN, 350,400, width/2, height/3);
+  
 }
 public void mousePressed()
 {
