@@ -20,15 +20,15 @@ public void draw()
   image(imgDOCTOC, 60,60);
   stroke(255);
   strokeWeight(15);
+
+  fill(54,99,132);
+  triangle(600,200, 200, 600, 600,600);
+  image(imgSPMAN, 350,400, width/2, height/3);
   
   line(0,0, 600,0);
   line(600,0, 600,600);
   line(0,600, 600,600);
   line(0,0, 0,600);
-  
-  fill(54,99,132);
-  triangle(600,200, 200, 600, 600,600);
-  image(imgSPMAN, 350,400, width/2, height/3);
   
 }
 public void mousePressed()
