@@ -20,20 +20,19 @@ class Tendril
   }
   public void show()
   {
-
-    if(myNumSegments >= 30){
-      stroke(101, 67, 33);
+    
+    // DESIGN
+    if(myNumSegments >= 50){
+      stroke(70, 73, 77);
+      strokeWeight(7);
+    }else if(myNumSegments >= 10){
+      stroke(255, 0, 0);
       strokeWeight(4);
-    }else if(myNumSegments >= 12){
-      stroke(139, 146, 22);
-      strokeWeight(3);
-    }else if(myNumSegments >= 3){
-      stroke(167, 159, 15);
-      strokeWeight(2);
     }else{ 
-      stroke(201, 30, 10);
-      strokeWeight(1);
+      stroke(70, 73, 77);
+      strokeWeight(5);
     }
+   
     
     startX = myX;
     startY = myY;
@@ -50,8 +49,8 @@ class Tendril
       startY = endY;
      
       }
-      if(myNumSegments >= 3){
-        Cluster c = new Cluster((int)myNumSegments/3, (int)startX, (int)startY);
+      if(myNumSegments >= 10){
+        Cluster c = new Cluster((int)myNumSegments/5, (int)startX, (int)startY);
         c.show();
     }
   }
