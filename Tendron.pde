@@ -17,7 +17,7 @@ public void draw()
  
   Cluster c = new Cluster(50, 250, 250); // initial number of segments in the tendril and starting (x,y) coordinate
   
-  image(imgDOCTOC, 60,60);
+  image(imgDOCTOC, 70,60);
   stroke(255);
   strokeWeight(15);
 
